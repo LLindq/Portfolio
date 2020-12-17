@@ -4,7 +4,8 @@ const { db } = require('../util/admin');
 
 exports.getAllTodos = (request, response) => {
 	db
-		.collection('todos')
+        .collection('todos')
+        .where('username', '==', request.user.username)
 		.orderBy('createdAt', 'desc')
 		.get()
 		.then((data) => {
@@ -25,6 +26,30 @@ exports.getAllTodos = (request, response) => {
 		});
 };
 
+exports.getOneTodo = (request, response) => {
+	db
+        .collection('todos')
+        .where('username', '==', request.user.username)
+		.orderBy('createdAt', 'desc')
+		.get()
+		.then((data) => {
+			let todo = [];
+			data.forEach((doc) => {
+				todo.push({
+                    todoId: doc.id,
+                    title: doc.data().title,
+					body: doc.data().body,
+					createdAt: doc.data().createdAt,
+				});
+			});
+			return response.json(todo);
+		})
+		.catch((err) => {
+			console.error(err);
+			return response.status(500).json({ error: err.code});
+		});
+};
+
 exports.postOneTodo = (request, response) => {
 	if (request.body.body.trim() === '') {
 		return response.status(400).json({ body: 'Must not be empty' });
@@ -37,7 +62,9 @@ exports.postOneTodo = (request, response) => {
     const newTodoItem = {
         title: request.body.title,
         body: request.body.body,
-        createdAt: new Date().toISOString()
+        createdAt: new Date().toISOString(),
+        username: request.user.username
+
     }
     db
         .collection('todos')
@@ -53,6 +80,8 @@ exports.postOneTodo = (request, response) => {
 		});
 };
 
+
+
 exports.deleteTodo = (request, response) => {
     const document = db.doc(`/todos/${request.params.todoId}`);
     document
@@ -64,6 +93,9 @@ exports.deleteTodo = (request, response) => {
             return document.delete();
         })
         .then(() => {
+            if(doc.data().username !== request.user.username){
+                return response.status(403).json({error:"UnAuthorized"})
+           }
             response.json({ message: 'Delete successfull' });
         })
         .catch((err) => {
@@ -88,5 +120,3 @@ exports.editTodo = ( request, response ) => {
         });
     });
 };
-
-// https://us-central1-portfolio-leonl.cloudfunctions.net/api

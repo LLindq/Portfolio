@@ -2,6 +2,7 @@
 
 const functions = require('firebase-functions');
 const app = require('express')();
+const auth = require('./util/auth');
 
 const {
     getAllTodos
@@ -31,13 +32,36 @@ const {
     signUpUser
 } = require('./APIs/users')
 
+
+const {
+    // ..,
+    uploadProfilePhoto
+} = require('./APIs/users')
+
+
+const {
+    // ..,
+    getUserDetail
+} = require('./APIs/users')
+
+const {
+    // ..,
+    updateUserDetails
+} = require('./APIs/users')
+
+const {
+
+    getOneTodo
+} = require('./APIs/todos')
+
+app.post('/user', auth, updateUserDetails);
+app.get('/user', auth, getUserDetail);
+app.get('/todo/:todoId', auth, getOneTodo);
+app.post('/user/image', auth, uploadProfilePhoto);
 app.post('/signup', signUpUser);
-
-// Users
 app.post('/login', loginUser);
-
-app.put('/todo/:todoId', editTodo);
-app.delete('/todo/:todoId', deleteTodo);
-app.post('/todo', postOneTodo);
-app.get('/todos', getAllTodos);
+app.put('/todo/:todoId', auth, editTodo);
+app.delete('/todo/:todoId', auth, deleteTodo);
+app.post('/todo', auth, postOneTodo);
+app.get('/todos', auth, getAllTodos);
 exports.api = functions.https.onRequest(app);

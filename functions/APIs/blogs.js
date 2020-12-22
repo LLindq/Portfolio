@@ -1,24 +1,23 @@
-//todos.js
 
 const { db } = require('../util/admin');
-
-exports.getAllTodos = (request, response) => {
+const collection = 'blogs';
+exports.getAllBlogs = (request, response) => {
 	db
-        .collection('todos')
+        .collection(collection)
         .where('username', '==', request.user.username)
 		.orderBy('createdAt', 'desc')
 		.get()
 		.then((data) => {
-			let todos = [];
+			let blogs = [];
 			data.forEach((doc) => {
-				todos.push({
-                    todoId: doc.id,
+				blogs.push({
+                    blogId: doc.id,
                     title: doc.data().title,
 					body: doc.data().body,
 					createdAt: doc.data().createdAt,
 				});
 			});
-			return response.json(todos);
+			return response.json(blogs);
 		})
 		.catch((err) => {
 			console.error(err);
@@ -26,23 +25,23 @@ exports.getAllTodos = (request, response) => {
 		});
 };
 
-exports.getOneTodo = (request, response) => {
+exports.getOneBlog = (request, response) => {
 	db
-        .collection('todos')
+        .collection('blogs')
         .where('username', '==', request.user.username)
 		.orderBy('createdAt', 'desc')
 		.get()
 		.then((data) => {
-			let todo = [];
+			let blog = [];
 			data.forEach((doc) => {
-				todo.push({
-                    todoId: doc.id,
+				blog.push({
+                    blogId: doc.id,
                     title: doc.data().title,
 					body: doc.data().body,
 					createdAt: doc.data().createdAt,
 				});
 			});
-			return response.json(todo);
+			return response.json(blog);
 		})
 		.catch((err) => {
 			console.error(err);
@@ -50,7 +49,7 @@ exports.getOneTodo = (request, response) => {
 		});
 };
 
-exports.postOneTodo = (request, response) => {
+exports.postOneBlog = (request, response) => {
 	if (request.body.body.trim() === '') {
 		return response.status(400).json({ body: 'Must not be empty' });
     }
@@ -59,7 +58,7 @@ exports.postOneTodo = (request, response) => {
         return response.status(400).json({ title: 'Must not be empty' });
     }
     
-    const newTodoItem = {
+    const newBlogItem = {
         title: request.body.title,
         body: request.body.body,
         createdAt: new Date().toISOString(),
@@ -67,12 +66,12 @@ exports.postOneTodo = (request, response) => {
 
     }
     db
-        .collection('todos')
-        .add(newTodoItem)
+        .collection('blogs')
+        .add(newBlogtem)
         .then((doc)=>{
-            const responseTodoItem = newTodoItem;
-            responseTodoItem.id = doc.id;
-            return response.json(responseTodoItem);
+            const responseBlogItem = newBlogItem;
+            responseBlogItem.id = doc.id;
+            return response.json(responseBlogItem);
         })
         .catch((err) => {
 			response.status(500).json({ error: 'Something went wrong' });
@@ -82,8 +81,8 @@ exports.postOneTodo = (request, response) => {
 
 
 
-exports.deleteTodo = (request, response) => {
-    const document = db.doc(`/todos/${request.params.todoId}`);
+exports.deleteBlog = (request, response) => {
+    const document = db.doc(`/blogss/${request.params.blogId}`);
     document
         .get()
         .then((doc) => {
@@ -94,7 +93,6 @@ exports.deleteTodo = (request, response) => {
             if (!doc.exists) {
                 return response.status(404).json({ error: 'Todo not found' })
             }
-            console.log('nu tar vi bort')
             response.json({ message: 'Delete successfull' });
             return document.delete();
         })
@@ -104,11 +102,11 @@ exports.deleteTodo = (request, response) => {
         });
 };
 
-exports.editTodo = ( request, response ) => { 
-    if(request.body.todoId || request.body.createdAt){
+exports.editBlog = ( request, response ) => { 
+    if(request.body.blogId || request.body.createdAt){
         response.status(403).json({message: 'Not allowed to edit'});
     }
-    let document = db.collection('todos').doc(`${request.params.todoId}`);
+    let document = db.collection('blogs').doc(`${request.params.blogId}`);
     document.update(request.body)
     .then(()=> {
         response.json({message: 'Updated successfully'});

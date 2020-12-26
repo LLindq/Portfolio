@@ -67,7 +67,7 @@ exports.postOneBlog = (request, response) => {
     }
     db
         .collection('blogs')
-        .add(newBlogtem)
+        .add(newBlogItem)
         .then((doc)=>{
             const responseBlogItem = newBlogItem;
             responseBlogItem.id = doc.id;

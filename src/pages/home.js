@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import Account from '../components/account';
 import Todo from '../components/todo';
+import Blog from '../components/blog';
 
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
@@ -79,6 +80,10 @@ function Home(props) {
     const loadAccountPage = (event) => {
         setRender(true)
     }
+
+    const loadBlogPage = (event) => {
+        setRender(false)
+    }
 	
     const loadTodoPage = (event) => {
         setRender(false);
@@ -89,9 +94,7 @@ function Home(props) {
         props.history.push('/login');
     }
     useEffect(() => {
-        console.log('hej')
-
-		authMiddleWare(props.history);
+   		authMiddleWare(props.history);
 		const authToken = localStorage.getItem('AuthToken');
 		axios.defaults.headers.common = { Authorization: `${authToken}` };
 		axios
@@ -157,12 +160,20 @@ function Home(props) {
 						</center>
 						<Divider />
 						<List>
-							<ListItem button key="Todo" onClick={loadTodoPage}>
+                        <ListItem button key="Todo" onClick={loadTodoPage}>
 								<ListItemIcon>
 									{' '}
 									<NotesIcon />{' '}
 								</ListItemIcon>
 								<ListItemText primary="Todo" />
+							</ListItem>
+
+                            <ListItem button key="Blog" onClick={loadBlogPage}>
+								<ListItemIcon>
+									{' '}
+									<NotesIcon />{' '}
+								</ListItemIcon>
+								<ListItemText primary="Blog" />
 							</ListItem>
 
 							<ListItem button key="Account" onClick={loadAccountPage}>

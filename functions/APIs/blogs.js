@@ -4,7 +4,7 @@ const collection = 'blogs';
 exports.getAllBlogs = (request, response) => {
 	db
         .collection(collection)
-        .where('username', '==', request.user.username)
+        // .where('username', '==', request.user.username)
 		.orderBy('createdAt', 'desc')
 		.get()
 		.then((data) => {

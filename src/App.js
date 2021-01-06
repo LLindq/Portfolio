@@ -2,9 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import login from './pages/login';
 import signup from './pages/signup';
-import home from './pages/home';
+import admin from './pages/admin';
 import account from './components/account';
 import blog from './components/blog'
+import about from './pages/about';
+import resume from './pages/resume';
+import dashboard from './pages';
+import publicblog from './pages/publicblog';
 
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
@@ -30,9 +34,13 @@ function App() {
           <Switch>
               <Route exact path="/login" component={login}/>
               <Route exact path="/signup" component={signup}/>
-              <Route exact path="/" component={home}/>
+              <Route exact path="/admin" component={admin}/>
               <Route exact path="/account" component={account}/>
-              <Route exact path="/blog" component={blog}/>
+              {/* <Route exact path="/blog" component={blog}/> */}
+              <Route exact path="/publicblog" component={publicblog}/>
+              <Route exact path="/about" component={about}/>
+              <Route exact path="/resume" component={resume}/>
+              <Route exact path="/" component={dashboard}/>
           </Switch>
         </div>
       </Router>

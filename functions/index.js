@@ -26,7 +26,7 @@ const {
     updateUserDetails,
 } = require('./APIs/users')
 
-
+app.post('../components/dashboard')
 app.post('/user', auth, updateUserDetails);
 app.get('/user', auth, getUserDetail);
 
@@ -37,7 +37,7 @@ app.post('/login', loginUser);
 app.put('/blog/:blogId', auth, editBlog);
 app.delete('/blog/:blogId', auth, deleteBlog);
 app.post('/blog', auth, postOneBlog);
-app.get('/blogs', auth, getAllBlogs);
+app.get('/blogs', getAllBlogs);
 app.get('/blog/:blogId', auth, getOneBlog);
 
 app.put('/todo/:todoId', auth, editTodo);

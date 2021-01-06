@@ -72,7 +72,7 @@ function Login(props) {
 			.then((response) => {
 				localStorage.setItem('AuthToken', `Bearer ${response.data.token}`);
 				setLoading(false);
-				props.history.push('/');
+				props.history.push('/admin');
 			})
 			.catch((error) => {
                 setErrors(

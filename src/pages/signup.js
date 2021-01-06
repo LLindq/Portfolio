@@ -51,32 +51,6 @@ function Signup(props) {
     const [errors, setErrors] = useState([]);
     const [loading, setLoading] = useState(false);
 
-
-// class signup extends Component {
-// 	constructor(props) {
-// 		super(props);
-
-// 		this.state = {
-// 			firstName: '',
-// 			lastName: '',
-// 			phoneNumber: '',
-// 			country: '',
-// 			username: '',
-// 			email: '',
-// 			password: '',
-// 			confirmPassword: '',
-// 			errors: [],
-// 			loading: false
-// 		};
-// 	}
-
-	// componentWillReceiveProps(nextProps) {
-	// 	if (nextProps.UI.errors) {
-	// 		this.setState({
-	// 			errors: nextProps.UI.errors
-	// 		});
-	// 	}
-	// }
     useEffect(() => {
 
     },[])   

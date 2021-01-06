@@ -1,0 +1,34 @@
+
+
+
+.main {
+    // display: flex;
+    // align-items: center;
+
+    .titleContainer {
+        display: flex;
+        justify-content: center;
+        // background-color: white;
+        // align-items: center;
+        // width: 600px;
+        
+        // width: 50%;
+        .blogTitle {
+            // border-top: 2px solid black;
+            display: block;    
+            color: red;
+        }
+
+    }
+    .bodyContainer {
+        display: flex;
+        justify-content: center;
+
+        .blogBody {
+            display: block;    
+            // border-bottom: 2px solid black;
+        }
+    }
+}
+
+

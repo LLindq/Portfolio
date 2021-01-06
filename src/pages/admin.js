@@ -4,6 +4,9 @@ import axios from 'axios';
 import Account from '../components/account';
 import Todo from '../components/todo';
 import Blog from '../components/blog';
+import Resume from './resume';
+import About from './about';
+import Dashboard from '.';
 
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
@@ -62,7 +65,7 @@ const styles = (theme) => ({
 	toolbar: theme.mixins.toolbar
 });
 
-function Home(props) {
+function Admin(props) {
     const [render, setRender] = useState(false);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -75,24 +78,42 @@ function Home(props) {
     const [error, setError] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
     const [imageLoading, setimageLoading] = useState(false);
+    const [renderPage, setRenderPage] = useState(<Account/ >);
 
 
     const loadAccountPage = (event) => {
-        setRender(true)
+        // setRender(true)
+        setRenderPage(<Account />)
+    }
+
+    const loadDashboardPage = (event) => {
+        // setRender(true)
+        setRenderPage(<Dashboard />)
+    }
+
+    const loadAboutPage = (event) => {
+        // setRender(true)
+        setRenderPage(<About />)
+    }
+
+    const loadResumePage = (event) => {
+        // setRender(true)
+        setRenderPage(<Resume />)
     }
 
     const loadBlogPage = (event) => {
-        setRender(false)
+        setRenderPage(<Blog />)
     }
 	
     const loadTodoPage = (event) => {
-        setRender(false);
+        setRenderPage(<Todo />)
     }
 	
     const logoutHandler = (event) => {
         localStorage.removeItem('AuthToken');
         props.history.push('/login');
     }
+    
     useEffect(() => {
    		authMiddleWare(props.history);
 		const authToken = localStorage.getItem('AuthToken');
@@ -122,7 +143,7 @@ function Home(props) {
 				// this.setState({ errorMsg: 'Error in retrieving the data' });
 			});
 	},[])  
-
+    
 
 		const { classes } = props;		
 		if (uiLoading === true) {
@@ -160,7 +181,28 @@ function Home(props) {
 						</center>
 						<Divider />
 						<List>
-                        <ListItem button key="Todo" onClick={loadTodoPage}>
+                        <ListItem button key="Home" onClick={loadDashboardPage}>
+								<ListItemIcon>
+									{' '}
+									<NotesIcon />{' '}
+								</ListItemIcon>
+								<ListItemText primary="Home" />
+							</ListItem>
+                            <ListItem button key="About" onClick={loadAboutPage}>
+								<ListItemIcon>
+									{' '}
+									<NotesIcon />{' '}
+								</ListItemIcon>
+								<ListItemText primary="About" />
+							</ListItem>
+                            <ListItem button key="Resume" onClick={loadResumePage}>
+								<ListItemIcon>
+									{' '}
+									<NotesIcon />{' '}
+								</ListItemIcon>
+								<ListItemText primary="Resume" />
+							</ListItem>
+                            <ListItem button key="Todo" onClick={loadTodoPage}>
 								<ListItemIcon>
 									{' '}
 									<NotesIcon />{' '}
@@ -193,11 +235,12 @@ function Home(props) {
 							</ListItem>
 						</List>
 					</Drawer>
-
-					<div>{render ? <Account /> : <Todo />}</div>
+                    
+                    <div>{renderPage}</div>
+                    {/* <div>{render ? <Account /> : <Todo />}</div> */}
 				</div>
 			);
 		}
 	}
 
-export default withStyles(styles)(Home);
+export default withStyles(styles)(Admin);

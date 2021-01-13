@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import './util/global.scss';
 import login from './pages/login';
 import signup from './pages/signup';
 import admin from './pages/admin';
@@ -9,6 +10,8 @@ import about from './pages/about';
 import resume from './pages/resume';
 import dashboard from './pages';
 import publicblog from './pages/publicblog';
+import './util/_mixins.scss';
+import 'normalize.css'
 
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';

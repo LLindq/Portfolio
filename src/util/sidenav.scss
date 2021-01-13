@@ -1,4 +1,4 @@
-
+@import "mixins.scss";
 
 *, :before, :after{ box-sizing: border-box; }
 // FONTS
@@ -6,9 +6,11 @@ $sans: 'Raleway', 'sans serif';
 
 // COLORS
 $orange: #ffffff44;
-$gray: #10171ab6;
+// $bg:
+// $gray: #DDD;
+
 $gray-shine: #ffffff5e;
-$white-off: #DFDBD9;
+$white-off: #91F9E5;
 
 // REUSABLE STYLES
 .unstyled{ list-style: none; padding: 0; margin: 0;
@@ -24,7 +26,7 @@ $white-off: #DFDBD9;
     position: fixed;
     left: 0; top: 0; bottom: 0;
     width: 100px;
-    background: $gray;
+    @include bgColor4;
     }
 
     .logo{
@@ -57,7 +59,8 @@ $white-off: #DFDBD9;
             position: fixed;
             left: 0; top: 0; bottom: 0;
             width: 190px;
-            background: $gray;
+            // background: $gray;
+            @include bgColor4;
         }
     
         .logo{
@@ -75,7 +78,8 @@ $white-off: #DFDBD9;
             position: fixed;
             left: 0; top: 0; bottom: 0;
             width: 280px;
-            background: $gray;
+            // background: $gray;
+            @include bgColor4;
         }
     
         .logo{
@@ -171,72 +175,3 @@ $white-off: #DFDBD9;
     }
   }
 }
-
-
-// @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
-// html {
-//   font-family: Arial;
-//   font-size: 16px;
-// //   margin: 
-// //   background: #5e42a6;
-// }
-
-// .sidebar {
-//   position: fixed;
-//   width: 15%;
-//   height: 100px;
-//   background: #312450;
-//   font-size: 0.65em;
-// }
-
-// .nav {
-//   position: relative;
-//   margin: 0 15%;
-//   text-align: right;
-//   top: 50%;
-//   transform: translateY(-50%);
-//   font-weight: bold;
-// }
-
-// .nav ul {
-//   list-style: none;
-  
-//   li {
-//     position: relative;
-//     margin: 3.2em 0;
-    
-//     a {
-//       line-height: 5em;
-//       text-transform: uppercase;
-//       text-decoration: none;
-//       letter-spacing: 0.4em;
-//       color: rgba(#FFF, 0.35);
-//       display: block;
-//       transition: all ease-out 300ms;
-//     }
-    
-//     &.active a {
-//       color: white;
-//     }
-    
-//     &:not(.active)::after {
-//       opacity: 0.2;
-//     }
-    
-//     &:not(.active):hover a {
-//       color: rgba(#FFF, 0.75);
-//     }
-    
-//     &::after {
-//       content: '';
-//       position: absolute;
-//       width: 100%;
-//       height: 0.2em;
-//       background: black;
-//       left: 0;
-//       bottom: 0;
-//       background-image: linear-gradient(to right, #5e42a6, #b74e91)
-//     }
-//   }
-// }

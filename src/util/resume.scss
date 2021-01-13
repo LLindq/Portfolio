@@ -1,0 +1,185 @@
+@import './mixins';
+@media screen and (min-width: 1px) {
+
+    .resumeMain {
+        @include Font;
+        @include Green1;
+        margin-left: 18%;
+        font-family: 'Raleway', 'sans serif';
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 18%;
+        .resumeTitle {
+            margin-top: 10%;
+            margin-left: 4%;
+            font-size: 30px;
+            letter-spacing: 10px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            @include Green2;
+            text-shadow: 0 0 10px #3F4531; 
+        }
+        .resumeSubtitle {
+            font-size: 12px;
+            @include Green4;
+        }
+        
+    }
+
+    .resumeContainer {
+        display: flex;
+        flex-direction: column;
+        color: black;
+        align-items: center;
+        margin-left: 1%;
+        .resumeImg {
+            width: 50%;
+            height: auto;
+            margin-right: -8%;
+        }
+        .resumeText {
+            
+            color: black;
+            font-size: 14px;
+            padding: 18px;
+            padding-left: 20px;
+            margin-left: 2%;
+            width: 280px;
+            line-height: 200%;
+
+            .resumeSummary{
+                .studies{
+                    font-size: 14px;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+       .speech-bubble-resume {
+        position: relative;
+        margin-top: 15%;
+        
+        width: 75%;
+        padding: 8px;
+        @include bgColor2;
+        border-radius: .4em;
+    }
+    
+
+    .copyrightInfo{
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        flex-direction: column;
+        margin-bottom: auto;
+        margin-left: 42%;
+        text-align: center;
+    }
+    @media screen and (min-width: 768px) {
+
+        .resumeMain {
+            margin-left: 22%;
+            .resumeTitle {
+                font-size: 40px;
+                
+            }
+            .resumeSubtitle {
+                font-size: 14px;
+            }
+            
+            .resumeImg {
+                width: 30%;
+                height: auto;
+                margin-right: -3%;
+            }
+        }
+
+        
+        .resumeContainer {
+            display: flex;
+            flex-direction: column;
+            color: black;
+            align-items: center;
+            margin-left: 1%;
+            .resumeText {
+                color: black;
+                font-size: 14px;
+                padding: 18px;
+                padding-left: 20px;
+                margin-left: 2%;
+                width: 70%;
+                .resumeSummary{
+                    .studies{
+                        font-size: 14px;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+
+        .speech-bubble-resume {
+            position: relative;
+            margin-top: 15%;
+    
+            width: 75%;
+            padding: 8px;
+            border-radius: .4em;
+        }
+
+        .copyrightInfo{
+            margin-left: 50%;
+        }
+    }
+    @media screen and (min-width: 1280px) {
+        .resumeMain {
+            margin-left: 22%;
+            .resumeTitle {
+                font-size: 40px;
+            }
+            .resumeSubtitle {
+                font-size: 14px;
+            }
+        }
+        .speech-bubble-resume {
+            position: relative;
+            margin-top: 6%;
+            width: 35%;
+            padding: 8px;
+            border-radius: .4em;
+        }
+    
+        .copyrightInfo{
+            margin-left: 52%;
+            // margin-bottom: -2%;
+        }
+
+        .resumeContainer {
+            flex-direction: row;
+            align-items: center;
+            margin-top: 8%;
+            width: 100%;
+            .resumeImg {
+                width: 20%;
+            }
+            .resumeText {
+                color: black;
+                font-size: 14px;
+                padding: 18px;
+                padding-left: 20px;
+                margin-left: 10%;
+                margin-right: 5%;
+                width: 80%;
+                .resumeSummary{
+                    .studies{
+                        font-size: 16px;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+

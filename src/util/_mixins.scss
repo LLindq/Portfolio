@@ -1,0 +1,34 @@
+@mixin Green1 {
+    color: #91F9E5
+}
+@mixin bgColor1 {
+    background-color: #91F9E5
+}
+@mixin Green2 {
+    color: #76F7BF
+}
+@mixin bgColor2 {
+    background-color: #76F7BF
+}
+@mixin Green3 {
+    color: #5FDD9D
+}
+@mixin bgColor3 {
+    background-color: #5FDD9D
+}
+@mixin Green4 {
+    color: #499167
+}
+@mixin bgColor4 {
+    background-color: #499167;
+}
+@mixin Green5 {
+    color: #3F4531
+}
+@mixin bgColor5 {
+    background-color: #3F4531
+}
+
+@mixin Font {
+    font-family: 'Raleway', 'sans serif';
+}

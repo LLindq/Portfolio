@@ -26,20 +26,19 @@ export default function Publicblog() {
 
     return(
     <div>
-        <div id='stars'></div>
-        <div id='stars2'></div>
-        <div id='stars3'></div>
+        <Sidenav />
+        <div className="blogTitle">Blog</div>
         {blogs.map((blog) => {
             console.log(blog)
             return(
                 <div>
-                    <Sidenav />
-                    <div className="main">
+                    <div className="mainBlog">
                         <div className="titleContainer">
                             <div className="blogTitle">{blog.title}</div>
                         </div>
                         <div className="bodyContainer">
                             <div className="blogBody">{blog.body}</div>
+                            {/* <div className="blogAuthor">{blog.createdAt}</div> */}
                         </div>
                     </div>
                 </div>)

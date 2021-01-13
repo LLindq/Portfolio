@@ -24,7 +24,7 @@ export default function Sidenav() {
             <nav class="main-nav" role="navigation">
             <ul class="unstyled list-hover-slide">
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
+                {/* <li><Link to="/about">About</Link></li> */}
                 <li><Link to="/resume">Resume</Link></li>
                 <li><Link to="/publicblog">Blog</Link></li>
             </ul>

@@ -1,0 +1,190 @@
+
+@media screen and (min-width: 1px) {
+
+    .aboutMain {
+        font-family: 'Raleway', 'sans serif';
+        display: flex;
+        flex-direction: column;
+        color: black;
+        align-items: center;
+        margin-left: 18%;
+        .aboutTitle {
+            font-size: 30px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        
+        }
+        .aboutSubtitle {
+            font-size: 12px;
+        }
+        
+    }
+
+    .aboutContainer {
+        display: flex;
+        flex-direction: column;
+        color: black;
+        align-items: center;
+        margin-left: 1%;
+        .aboutImg {
+            width: 50%;
+            height: auto;
+            margin-right: -8%;
+        }
+        .aboutText {
+            color: black;
+            font-size: 14px;
+            padding: 18px;
+            padding-left: 20px;
+            margin-left: 2%;
+            width: 280px;
+            line-height: 125%;
+        }
+    }
+       .speech-bubble-about {
+        position: relative;
+        margin-top: 15%;
+
+        width: 75%;
+        padding: 8px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: .4em;
+    }
+
+    .speech-bubble-about:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border: 50px solid transparent;
+        border-bottom-color: #dedede;
+        border-top: 0;
+        margin-left: -50px;
+        margin-top: -50px;
+    }
+    .copyrightInfo{
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        flex-direction: column;
+        margin-bottom: auto;
+        margin-left: 42%;
+        text-align: center;
+    }
+    @media screen and (min-width: 768px) {
+
+        .aboutMain {
+            margin-left: 22%;
+            .aboutTitle {
+                font-size: 40px;
+                
+            }
+            .aboutSubtitle {
+                font-size: 14px;
+            }
+            
+            .aboutImg {
+                width: 50%;
+                height: auto;
+                margin-right: -3%;
+            }
+        }
+
+
+        .speech-bubble-about {
+            position: relative;
+            margin-top: 15%;
+    
+            width: 75%;
+            padding: 8px;
+            background: rgba(196, 196, 196, 0.5);
+            border-radius: .4em;
+        }
+    
+        .speech-bubble-about:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border: 50px solid transparent;
+            border-bottom-color: #dedede;
+            border-top: 0;
+            margin-left: -50px;
+            margin-top: -50px;
+        }
+
+        .copyrightInfo{
+            margin-left: 50%;
+        }
+    }
+    @media screen and (min-width: 1280px) {
+        .aboutMain {
+            margin-left: 22%;
+            .aboutTitle {
+                font-size: 40px;
+                
+            }
+            .aboutSubtitle {
+                font-size: 14px;
+
+            }
+            
+            
+        }
+
+
+
+
+        .speech-bubble-about {
+            position: relative;
+            margin-top: 6%;
+            width: 35%;
+            padding: 8px;
+            background: rgba(196, 196, 196, 0.5);
+            border-radius: .4em;
+        }
+    
+        .speech-bubble-about:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border: 50px solid transparent;
+            border-right-color: #dedede;
+            border-left: 0;
+            margin-top: -50px;
+            margin-left: -50px;
+        }
+        .copyrightInfo{
+            margin-left: 52%;
+        }
+
+        .aboutContainer {
+            flex-direction: row;
+            align-items: center;
+            margin-top: 8%;
+            .aboutImg {
+                width: 50%;
+                height: auto;
+                margin-right: 18;
+            }
+            .aboutText {
+                color: black;
+                font-size: 14px;
+                padding: 18px;
+                padding-left: 20px;
+                margin-left: 10%;
+                 width: 280px;
+                 
+            }
+        }
+    }
+
+}

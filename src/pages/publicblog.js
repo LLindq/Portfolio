@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import '../util/global.scss';
-
 import '../util/publicblog.scss';
 import Sidenav from '../components/sidenav';
 
@@ -20,12 +19,8 @@ export default function Publicblog() {
 			});
     },[])
 
-
-    
-
-
     return(
-    <div>
+    <div className="containerHtml">
         <Sidenav />
         <div className="blogTitle">Blog</div>
         {blogs.map((blog) => {

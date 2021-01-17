@@ -1,44 +1,31 @@
 
-
+@import './mixins';
 
 .mainBlog {
-    // display: flex;
-    // align-items: center;
     width: 50%;
-    margin-top: 30px;
+    padding: 30px;
     margin-left: 35%;
-
-    // border: 2px solid black;
+    @include bgColor2;
 
     .titleContainer {
         display: flex;
         justify-content: center;
-        margin: 5px;
-        // background-color: white;
-        // align-items: center;
-        // width: 600px;
-        
-        // width: 50%;
-        // margin-left: 35%;
+
         .blogTitle {
             display: block;
             font-size: 24px;    
-            color: red;
+            @include Green5;
         }
-
     }
     .bodyContainer {
         display: flex;
         justify-content: center;
-        margin: 5px;
-        padding-bottom: 10px;
-        border-bottom: 2px rgba(56, 108, 219, 0.377) solid;
+        padding-bottom: 30px;
+        border-bottom: 2px #3F4531 solid;
 
         .blogBody {
             width: 100%;
-            // display: block;
             word-wrap: break-word;    
-            // border-bottom: 2px solid black;
         }
     }
 }

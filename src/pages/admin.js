@@ -82,22 +82,18 @@ function Admin(props) {
 
 
     const loadAccountPage = (event) => {
-        // setRender(true)
         setRenderPage(<Account />)
     }
 
     const loadDashboardPage = (event) => {
-        // setRender(true)
         setRenderPage(<Dashboard />)
     }
 
     const loadAboutPage = (event) => {
-        // setRender(true)
         setRenderPage(<About />)
     }
 
     const loadResumePage = (event) => {
-        // setRender(true)
         setRenderPage(<Resume />)
     }
 
@@ -140,7 +136,6 @@ function Admin(props) {
 				}
                 console.log(error);
                 setErrorMsg('Error in retrieving the data')
-				// this.setState({ errorMsg: 'Error in retrieving the data' });
 			});
 	},[])  
     
@@ -181,34 +176,34 @@ function Admin(props) {
 						</center>
 						<Divider />
 						<List>
-                        <ListItem button key="Home" onClick={loadDashboardPage}>
+                        {/* <ListItem button key="Home" onClick={loadDashboardPage}>
 								<ListItemIcon>
 									{' '}
 									<NotesIcon />{' '}
 								</ListItemIcon>
 								<ListItemText primary="Home" />
-							</ListItem>
-                            <ListItem button key="About" onClick={loadAboutPage}>
+							</ListItem> */}
+                            {/* <ListItem button key="About" onClick={loadAboutPage}>
 								<ListItemIcon>
 									{' '}
 									<NotesIcon />{' '}
 								</ListItemIcon>
 								<ListItemText primary="About" />
-							</ListItem>
-                            <ListItem button key="Resume" onClick={loadResumePage}>
+							</ListItem> */}
+                            {/* <ListItem button key="Resume" onClick={loadResumePage}>
 								<ListItemIcon>
 									{' '}
 									<NotesIcon />{' '}
 								</ListItemIcon>
 								<ListItemText primary="Resume" />
-							</ListItem>
-                            <ListItem button key="Todo" onClick={loadTodoPage}>
+							</ListItem> */}
+                            {/* <ListItem button key="Todo" onClick={loadTodoPage}>
 								<ListItemIcon>
 									{' '}
 									<NotesIcon />{' '}
 								</ListItemIcon>
 								<ListItemText primary="Todo" />
-							</ListItem>
+							</ListItem> */}
 
                             <ListItem button key="Blog" onClick={loadBlogPage}>
 								<ListItemIcon>
@@ -235,9 +230,7 @@ function Admin(props) {
 							</ListItem>
 						</List>
 					</Drawer>
-                    
                     <div>{renderPage}</div>
-                    {/* <div>{render ? <Account /> : <Todo />}</div> */}
 				</div>
 			);
 		}

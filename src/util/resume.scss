@@ -1,4 +1,5 @@
 @import './mixins';
+
 @media screen and (min-width: 1px) {
 
     .resumeMain {
@@ -25,7 +26,6 @@
             font-size: 12px;
             @include Green4;
         }
-        
     }
 
     .resumeContainer {
@@ -60,7 +60,6 @@
        .speech-bubble-resume {
         position: relative;
         margin-top: 15%;
-        
         width: 75%;
         padding: 8px;
         @include bgColor2;
@@ -83,7 +82,6 @@
             margin-left: 22%;
             .resumeTitle {
                 font-size: 40px;
-                
             }
             .resumeSubtitle {
                 font-size: 14px;
@@ -124,7 +122,6 @@
         .speech-bubble-resume {
             position: relative;
             margin-top: 15%;
-    
             width: 75%;
             padding: 8px;
             border-radius: .4em;
@@ -154,7 +151,6 @@
     
         .copyrightInfo{
             margin-left: 52%;
-            // margin-bottom: -2%;
         }
 
         .resumeContainer {

@@ -3,15 +3,13 @@ import '../util/global.scss';
 import '../util/about.scss';
 import background from '../util/images/background.jpg';
 import leon1 from '../util/images/leon1.png'
-
 import Sidenav from '../components/sidenav';
 
 export default function About() {
 
-       return(<div>
-
+       return(
+       <div>
         <div className="lines">
-            
             <div className="line"></div>
             <div className="line"></div>
             <div className="line"></div>
@@ -34,13 +32,10 @@ export default function About() {
             </div>
             </div>
         </div>
-    
         <div className="copyrightInfo">
             <div className="info">leon.lindqvist@gmail.com</div>
             <div className="info">© 2020 Leon Lindqvist</div>
         </div>
-            
-
     </div>)
 }
 

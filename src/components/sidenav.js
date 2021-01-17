@@ -1,5 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
 import '../util/sidenav.scss';
+import logoW from '../util/images/logoW.png';
+import logoB from '../util/images/logoB.png';
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -11,53 +14,30 @@ import {
 
 export default function Sidenav() {
 
-
+    const [logoImg, setLogoImg] = useState(logoW);
+    const [toggle, setToggle] = useState(true);
+    function changeLogo(){
+        setToggle(!toggle);
+    }
+    
 
 
     return(
 
-    <header class="header" role="banner">
-        <h1 class="logo">
-            <a href="#">Leon <span>Lindqvist</span></a>
+    <header className="header" role="banner">
+        <h1 className="logo">
+            <img src={toggle ? logoW : logoB} className="myLogo" onClick={changeLogo}/>
         </h1>
-        <div class="nav-wrap">
-            <nav class="main-nav" role="navigation">
-            <ul class="unstyled list-hover-slide">
+        <div className="nav-wrap">
+            <nav className="main-nav" role="navigation">
+            <ul className="unstyled list-hover-slide">
                 <li><Link to="/">Home</Link></li>
-                {/* <li><Link to="/about">About</Link></li> */}
                 <li><Link to="/resume">Resume</Link></li>
                 <li><Link to="/publicblog">Blog</Link></li>
             </ul>
             </nav>
-            {/* <ul class="social-links list-inline unstyled list-hover-slide">
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Google+</a></li>
-            <li><a href="#">GitHub</a></li>
-            <li><a href="#">CodePen</a></li>
-            </ul> */}
-        </div>
+            </div>
     </header>
-    // <div className="nav-wrap">
-    //     <div className="main-nav">
-    //         <div className="unstyled list-hover-slide">
-    //             <ul>
-    //             {/* className="active" */}
-    //             <li >
-    //                 <Link to="/">Home</Link>
-    //             </li>
-    //             <li>
-    //                 <Link to="/about">About</Link>
-    //             </li>
-    //             <li>
-    //                 <Link to="/resume">Resume</Link>
-    //             </li>
-    //             <li>
-    //                 <Link to="/publicblog">Blog</Link>
-    //             </li>
-    //             </ul>
-    //         </div>
-    //     </div>
-    // </div>
     )
 }
 

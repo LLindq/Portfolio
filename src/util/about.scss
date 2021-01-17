@@ -1,4 +1,3 @@
-
 @media screen and (min-width: 1px) {
 
     .aboutMain {
@@ -13,12 +12,10 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-        
         }
         .aboutSubtitle {
             font-size: 12px;
         }
-        
     }
 
     .aboutContainer {
@@ -45,7 +42,6 @@
        .speech-bubble-about {
         position: relative;
         margin-top: 15%;
-
         width: 75%;
         padding: 8px;
         background: rgba(196, 196, 196, 0.5);
@@ -79,21 +75,17 @@
         .aboutMain {
             margin-left: 22%;
             .aboutTitle {
-                font-size: 40px;
-                
+                font-size: 40px;  
             }
             .aboutSubtitle {
                 font-size: 14px;
             }
-            
             .aboutImg {
                 width: 50%;
                 height: auto;
                 margin-right: -3%;
             }
         }
-
-
         .speech-bubble-about {
             position: relative;
             margin-top: 15%;
@@ -103,7 +95,6 @@
             background: rgba(196, 196, 196, 0.5);
             border-radius: .4em;
         }
-    
         .speech-bubble-about:after {
             content: '';
             position: absolute;
@@ -117,7 +108,6 @@
             margin-left: -50px;
             margin-top: -50px;
         }
-
         .copyrightInfo{
             margin-left: 50%;
         }
@@ -126,20 +116,12 @@
         .aboutMain {
             margin-left: 22%;
             .aboutTitle {
-                font-size: 40px;
-                
+                font-size: 40px;  
             }
             .aboutSubtitle {
                 font-size: 14px;
-
             }
-            
-            
         }
-
-
-
-
         .speech-bubble-about {
             position: relative;
             margin-top: 6%;
@@ -148,7 +130,6 @@
             background: rgba(196, 196, 196, 0.5);
             border-radius: .4em;
         }
-    
         .speech-bubble-about:after {
             content: '';
             position: absolute;
@@ -165,7 +146,6 @@
         .copyrightInfo{
             margin-left: 52%;
         }
-
         .aboutContainer {
             flex-direction: row;
             align-items: center;
@@ -182,7 +162,6 @@
                 padding-left: 20px;
                 margin-left: 10%;
                  width: 280px;
-                 
             }
         }
     }

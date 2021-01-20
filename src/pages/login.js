@@ -13,6 +13,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 import axios from 'axios';
 
+///Preppad styling för loginsidan
 const styles = (theme) => ({
     paper: {
         marginTop: theme.spacing(8),
@@ -46,10 +47,7 @@ function Login(props) {
     const [errors, setErrors] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-
-    },[])   
-
+  /// Funktioner för fälten vid login
     const handleEmailChange = (event) => {
         setEmail(event.target.value)
     }
@@ -58,6 +56,7 @@ function Login(props) {
         setPassword(event.target.value)
     }
 
+	//Verifierar email/lösen vid login, skickar iväg och får tillbaka en authtoken om det stämmer mot dbn
 	const handleSubmit = (event) => {
         event.preventDefault();
         setLoading(true);

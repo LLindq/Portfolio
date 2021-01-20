@@ -1,7 +1,6 @@
 import React from 'react'
 import '../util/global.scss';
 import '../util/about.scss';
-import background from '../util/images/background.jpg';
 import leon1 from '../util/images/leon1.png'
 import Sidenav from '../components/sidenav';
 
@@ -9,11 +8,6 @@ export default function About() {
 
        return(
        <div>
-        <div className="lines">
-            <div className="line"></div>
-            <div className="line"></div>
-            <div className="line"></div>
-        </div>
         <Sidenav />
         <div className="aboutMain">
             <div className="aboutTitle">

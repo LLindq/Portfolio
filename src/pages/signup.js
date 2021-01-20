@@ -14,6 +14,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import axios from 'axios';
 
 
+/// Styling preppad för backenden.
 
 const styles = (theme) => ({
 	paper: {
@@ -38,7 +39,7 @@ const styles = (theme) => ({
 	}
 });
 
-
+// Hanterar signup-sidan, som är avaktiverad just nu.
 function Signup(props) {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -51,10 +52,7 @@ function Signup(props) {
     const [errors, setErrors] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-
-    },[])   
-
+   /// Samtliga funktioner för att hantera ändringar av fält på sidan
     const handleFirstNameChange = (event) => {
         setFirstName(event.target.value)
     }
@@ -82,14 +80,6 @@ function Signup(props) {
     const handleErrorsChange = (event) => {
         setErrors(event.target.value)
     };
-    // const handleLoadingChange = (event) => {
-    //     setLoading(event.target.value)
-    // }
-	// handleChange = (event) => {
-	// 	this.setState({
-	// 		[event.target.name]: event.target.value
-	// 	});
-	// };
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
@@ -284,8 +274,5 @@ function Signup(props) {
 			</Container>
         );
     }
-	
-
-
 
 export default withStyles(styles)(Signup);

@@ -4,7 +4,7 @@ const config = require('../util/config');
 const firebase = require('firebase');
 
 firebase.initializeApp(config);
-
+/// Går mot valideringsfilen för att se så inget fält saknas/alla tecken är godkända
 const { validateLoginData, validateSignUpData } = require('../util/validators');
 
 // Login
@@ -31,7 +31,8 @@ exports.loginUser = (request, response) => {
             return response.status(403).json({ general: 'wrong credentials, please try again'});
         })
 };
-
+/// Signupfunktionen har jag tagit bort då sidan inte är menad för många users, men när jag lärde mig firebase och authentication så körde jag på en fullskalig login-funktion
+/// för många users.
 exports.signUpUser = (request, response) => {
     const newUser = {
         firstName: request.body.firstName,
@@ -45,7 +46,7 @@ exports.signUpUser = (request, response) => {
     };
 
     const { valid, errors } = validateSignUpData(newUser);
-
+    /// Datan kontrolleras för ny user, om den stämmer går den vidare steg för steg och verifierar så att namnet är ledigt, och postar isåfall datan vidare
 	if (!valid) return response.status(400).json(errors);
 
     let token, userId;
@@ -109,7 +110,7 @@ deleteImage = (imageName) => {
     })
 }
 
-// Upload profile picture
+// Ladda upp profilbild, denna funktion funkar ej ännu, busboy ska användas för att hantera datan men något har gått fel vid upplägget
 exports.uploadProfilePhoto = (request, response) => {
     const BusBoy = require('busboy');
 	const path = require('path');
@@ -159,7 +160,7 @@ exports.uploadProfilePhoto = (request, response) => {
 	});
 	busboy.end(request.rawBody);
 };
-
+/// Hämtar datan för inloggad användare, kontrollerar mot namn. Är du ej inloggad men försöker accessa sidan slår den ifrån med error.
 exports.getUserDetail = (request, response) => {
     let userData = {};
 	db
@@ -176,7 +177,7 @@ exports.getUserDetail = (request, response) => {
 			return response.status(500).json({ error: error.code });
 		});
 }
-
+/// Vid ändring av din information sker uppdateringen nedan
 exports.updateUserDetails = (request, response) => {
     let document = db.collection('users').doc(`${request.user.username}`);
     document.update(request.body)

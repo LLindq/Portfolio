@@ -10,12 +10,13 @@
   li{ float: left; }
 }
 
-// HEADER STYLES
+// MEDIA QUERIES
 @media screen and (min-width: 1px) {
     .header{
     position: fixed;
     left: 0; top: 0; bottom: 0;
     width: 100px;
+    z-index: 99;
     @include bgColor4;
     }
 
@@ -81,9 +82,7 @@
                 height: auto;
             }
         }
-    
-    
-        }
+    }
     @media screen and (min-width: 1280px) {
 
         .header{
@@ -138,29 +137,6 @@
     }
   }
 }
-
-// // SOCIAL LINKS
-// .social-links{
-//   border-bottom: solid 1px $gray-shine;
-  
-//   li{
-//     width: 25%;
-//     border-left: solid 1px $gray-shine;
-//     &:first-child{ border: none; }
-//   }
-  
-//   a{
-//     display: block;
-//     height: 5.5em;
-//     text-align: center;
-//     color: $gray-shine;
-//     @include Font;
-//     font-size: 0.75em/5.5em;
-//     &:hover{
-//         @include Green1;
-//     }
-//   }
-// }
 
 // HOVER SLIDE EFFECT
 .list-hover-slide{

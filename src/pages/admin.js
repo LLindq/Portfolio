@@ -28,6 +28,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import { authMiddleWare } from '../util/auth'
 
 const drawerWidth = 240;
+/// Styling preppad för backenden.
 
 const styles = (theme) => ({
 	root: {
@@ -80,6 +81,7 @@ function Admin(props) {
     const [imageLoading, setimageLoading] = useState(false);
     const [renderPage, setRenderPage] = useState(<Account/ >);
 
+	/// Alla funktioner för fälten på adminsidan
 
     const loadAccountPage = (event) => {
         setRenderPage(<Account />)
@@ -154,7 +156,7 @@ function Admin(props) {
 					<AppBar position="fixed" className={classes.appBar}>
 						<Toolbar>
 							<Typography variant="h6" noWrap>
-								TodoApp
+								Admin
 							</Typography>
 						</Toolbar>
 					</AppBar>

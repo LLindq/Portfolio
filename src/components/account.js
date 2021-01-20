@@ -11,7 +11,7 @@ import clsx from 'clsx';
 import axios from 'axios';
 import { authMiddleWare } from '../util/auth';
 
-
+/// Styling preppad för backenden.
 const styles = (theme) => ({
 	content: {
 		flexGrow: 1,
@@ -60,7 +60,7 @@ const styles = (theme) => ({
 	}
 });
 
-//////// FORTSÄTT BYGGA FUNKTIONERNA FÖR CHANGE-BITEN
+///Hanterar accountsidan
 function Account(props) {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -75,6 +75,8 @@ function Account(props) {
     const [errorMsg, setErrorMsg] = useState([]);
     const [imageChange, setImageChange] = useState('');
 
+
+	/// Alla funktioner som används för att skifta värden när saker laddas / ändras
 	const handleFirstNameChange = (event) => {
         setFirstName(event.target.value)
     }
@@ -111,8 +113,8 @@ function Account(props) {
     const handleImageChange = (event) => {
         setImageChange(event.target.files[0])
 	};
+	///Kontrollerar om du är authentiserad och avgör mot din token vad som ska visas.
     useEffect(() => {
-        console.log('lolol')
         authMiddleWare(props.history);
 		const authToken = localStorage.getItem('AuthToken');
 		axios.defaults.headers.common = { Authorization: `${authToken}` };
@@ -140,7 +142,7 @@ function Account(props) {
 
     },[]) 
 	
-
+	/// Ej färdig, ahft svårt att lösa image-typen.
 	const profilePictureHandler = (event) => {
 		event.preventDefault();
 		setUiLoading(true)
@@ -168,7 +170,7 @@ function Account(props) {
                 setImageError('Error in posting the data')
 			});
 	};
-
+	///Hanterar uppdatering/ändringar av din profil och skickar tillbaka till databasen, om din token gått ut skickas du till loginsidan
 	const updateFormValues = (event) => {
         event.preventDefault();
         setButtonLoading(true)
@@ -193,7 +195,7 @@ function Account(props) {
 				setButtonLoading(false)
 			});
 	};
-
+///Sköter laddningsanimationen tills informationen hämtats från databasen, strukturen kommer från material-ui
 const { classes, ...rest } = props;
 		if (uiLoading === true) {
 			return (
@@ -225,7 +227,7 @@ const { classes, ...rest } = props;
 										Upload Photo
 									</Button>
 									<input type="file" onChange={handleImageChange} />
-
+								{/* Om fel filformat dyker upp, visas nedan fel. Jag får fortfarande det så det ligger i backloggen. */}
 									{imageError ? (
 										<div className={classes.customError}>
 											{' '}

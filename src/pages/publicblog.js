@@ -7,7 +7,7 @@ import Sidenav from '../components/sidenav';
 export default function Publicblog() {
 
     const [blogs, setBlogs] = useState([]);
-
+    ///Hämtar inläggen i bloggen
     useEffect(() => {
         axios
 			.get('/blogs')
@@ -23,6 +23,7 @@ export default function Publicblog() {
     <div className="containerHtml">
         <Sidenav />
         <div className="blogTitle">Blog</div>
+        {/* Loopar ut blog-collectionen och presenterar inläggen var för sig */}
         {blogs.map((blog) => {
             console.log(blog)
             return(
@@ -33,7 +34,6 @@ export default function Publicblog() {
                         </div>
                         <div className="bodyContainer">
                             <div className="blogBody">{blog.body}</div>
-                            {/* <div className="blogAuthor">{blog.createdAt}</div> */}
                         </div>
                     </div>
                 </div>)

@@ -1,20 +1,12 @@
 import React from 'react'
 import '../util/global.scss';
 import '../util/resume.scss';
-import background from '../util/images/background.jpg';
 import leon1 from '../util/images/leon1.png'
 
 import Sidenav from '../components/sidenav';
 
 export default function Resume() {
     return(<div className="containerHtml">
-
-        <div className="lines">
-            
-            <div className="line"></div>
-            <div className="line"></div>
-            <div className="line"></div>
-        </div>
         <Sidenav />
         <div className="resumeMain">
             <div className="resumeTitle">

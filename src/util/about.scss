@@ -67,7 +67,7 @@
         bottom: 0;
         flex-direction: column;
         margin-bottom: auto;
-        margin-left: 42%;
+        // margin-left: 42%;
         text-align: center;
     }
     @media screen and (min-width: 768px) {
@@ -108,9 +108,7 @@
             margin-left: -50px;
             margin-top: -50px;
         }
-        .copyrightInfo{
-            margin-left: 50%;
-        }
+        
     }
     @media screen and (min-width: 1280px) {
         .aboutMain {
@@ -143,9 +141,9 @@
             margin-top: -50px;
             margin-left: -50px;
         }
-        .copyrightInfo{
-            margin-left: 52%;
-        }
+        // .copyrightInfo{
+        //     margin-left: 52%;
+        // }
         .aboutContainer {
             flex-direction: row;
             align-items: center;

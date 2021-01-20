@@ -1,5 +1,7 @@
 @import "./mixins";
 
+
+//MEDIA QUERIES
 @media screen and (min-width: 1px) {
     .indexMain {
         @include Font;
@@ -64,8 +66,9 @@
         bottom: 0;
         flex-direction: column;
         margin-bottom: auto;
-        margin-left: 42%;
+        // margin-left: 42%;
         text-align: center;
+        @include bgColor3;
         @include Font;
     }
 }
@@ -96,7 +99,6 @@
         }
     }
 
-
     .speech-bubble {
         position: relative;
         margin-top: 10%;
@@ -104,7 +106,6 @@
         width: 75%;
         padding: 8px;
         @include bgColor2;
-        // background: rgba(196, 196, 196, 0.5);
         border-radius: .4em;
     }
 
@@ -121,9 +122,9 @@
         margin-left: -50px;
         margin-top: -50px;
     }
-    .copyrightInfo{
-        margin-left: 50%;
-    }
+    // .copyrightInfo{
+    //     margin-left: 50%;
+    // }
 }
 @media screen and (min-width: 1280px) {
     .indexMain {
@@ -166,8 +167,6 @@
         margin-left: -50px;
         margin-top: -50px;
     }
-    .copyrightInfo{
-        margin-left: 52%;
-    }
+    
 }
 

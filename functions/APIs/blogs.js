@@ -2,7 +2,8 @@
 const { db } = require('../util/admin');
 const collection = 'blogs';
 exports.getAllBlogs = (request, response) => {
-	db
+    db
+    /// Fältet nedan är utkommenterat för att den publika sidan ska se bloggen korrekt
         .collection(collection)
         // .where('username', '==', request.user.username)
 		.orderBy('createdAt', 'desc')
@@ -24,7 +25,7 @@ exports.getAllBlogs = (request, response) => {
 			return response.status(500).json({ error: err.code});
 		});
 };
-
+// Gör en Get mot bloggen
 exports.getOneBlog = (request, response) => {
 	db
         .collection('blogs')
@@ -48,7 +49,7 @@ exports.getOneBlog = (request, response) => {
 			return response.status(500).json({ error: err.code});
 		});
 };
-
+/// Gör en post vid nytt bloginlägg
 exports.postOneBlog = (request, response) => {
 	if (request.body.body.trim() === '') {
 		return response.status(400).json({ body: 'Must not be empty' });
@@ -80,9 +81,9 @@ exports.postOneBlog = (request, response) => {
 };
 
 
-
+/// Tar bort ett inlägg
 exports.deleteBlog = (request, response) => {
-    const document = db.doc(`/blogss/${request.params.blogId}`);
+    const document = db.doc(`/blogs/${request.params.blogId}`);
     document
         .get()
         .then((doc) => {
@@ -101,7 +102,7 @@ exports.deleteBlog = (request, response) => {
             return response.status(500).json({ error: err.code });
         });
 };
-
+// Editerar blogginlägg
 exports.editBlog = ( request, response ) => { 
     if(request.body.blogId || request.body.createdAt){
         response.status(403).json({message: 'Not allowed to edit'});

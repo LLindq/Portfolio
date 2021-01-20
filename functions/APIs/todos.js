@@ -1,5 +1,5 @@
 //todos.js
-
+// Hela den här är borttagen ur projektet så den ej är aktiv, den var en del av det jag lärde mig firebase genom
 const { db } = require('../util/admin');
 
 exports.getAllTodos = (request, response) => {

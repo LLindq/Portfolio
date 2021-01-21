@@ -90,17 +90,12 @@
     .socialbtns, .socialbtns ul, .socialbtns li {
       margin: 0;
       padding: 5px;
-      // display: flex;
-      // justify-content: center;
-      //   // align-items: center;
-      //   // text-align: center;
       margin-top: auto;
-  
     }
     
     .socialbtns li {
-        // list-style: none outside none;
-        // display: inline-block;
+        list-style: none outside none;
+        display: inline-block;
     }
     .socialbtns .fa {
         width: 40px;

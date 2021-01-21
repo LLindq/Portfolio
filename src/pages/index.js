@@ -26,7 +26,7 @@ export default function Index() {
         </div>
         <div className="copyrightInfo">
             <div className="info">leon.lindqvist@gmail.com</div>
-            <div className="info">© 2020 Leon Lindqvist</div>
+            <div className="info">© 2021 Leon Lindqvist</div>
         </div>
     </div>)
 }

@@ -5908,3 +5908,20 @@
 [info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Finished \"api\" in ~1s"}}
 [debug] [2021-01-20T18:41:12.159Z] [worker-api-b5d23b76-0a73-49bf-bdae-5748c3fcebab]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-b5d23b76-0a73-49bf-bdae-5748c3fcebab]: IDLE"}}
 [debug] [2021-01-20T18:41:12.159Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2021-01-20T19:23:17.278Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2021-01-20T19:23:17.279Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2021-01-20T19:23:17.279Z] Accepted request GET /portfolio-leonl/us-central1/api/blogs --> api
+[debug] [2021-01-20T19:23:17.279Z] [worker-pool] submitWork(triggerId=api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=api)"}}
+[debug] [2021-01-20T19:23:17.279Z] [worker-api-b5d23b76-0a73-49bf-bdae-5748c3fcebab]: Assigning socketPath: \\?\pipe\J:\Webutveckling\PortfolioProject\portfolioleon\functions\22636 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-b5d23b76-0a73-49bf-bdae-5748c3fcebab]: Assigning socketPath: \\\\?\\pipe\\J:\\Webutveckling\\PortfolioProject\\portfolioleon\\functions\\22636"}}
+[debug] [2021-01-20T19:23:17.279Z] [worker-api-b5d23b76-0a73-49bf-bdae-5748c3fcebab]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-b5d23b76-0a73-49bf-bdae-5748c3fcebab]: BUSY"}}
+[debug] [2021-01-20T19:23:17.281Z] [runtime-status] [22636] Trigger "api" has been found, beginning invocation! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [22636] Trigger \"api\" has been found, beginning invocation!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Beginning execution of \"api\""}}
+[debug] [2021-01-20T19:23:17.282Z] [runtime-status] [22636] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [22636] triggerDefinition {\"httpsTrigger\":{},\"name\":\"api\",\"entryPoint\":\"api\"}"}}
+[debug] [2021-01-20T19:23:17.282Z] [runtime-status] [22636] Running api in mode HTTPS {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [22636] Running api in mode HTTPS"}}
+[debug] [2021-01-20T19:23:17.282Z] [runtime-status] [22636] Attempting to listen to socketPath: \\?\pipe\J:\Webutveckling\PortfolioProject\portfolioleon\functions\22636 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [22636] Attempting to listen to socketPath: \\\\?\\pipe\\J:\\Webutveckling\\PortfolioProject\\portfolioleon\\functions\\22636"}}
+[debug] [2021-01-20T19:23:17.284Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2021-01-20T19:23:17.291Z] [runtime-status] [22636] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [22636] Ephemeral server handling GET request"}}
+[debug] [2021-01-20T19:23:17.293Z] [runtime-status] [22636] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [22636] Ephemeral server survived."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Finished \"api\" in ~1s"}}
+[debug] [2021-01-20T19:23:17.413Z] [worker-api-b5d23b76-0a73-49bf-bdae-5748c3fcebab]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-b5d23b76-0a73-49bf-bdae-5748c3fcebab]: IDLE"}}
+[debug] [2021-01-20T19:23:17.413Z] [work-queue] {"queueLength":0,"workRunningCount":0}

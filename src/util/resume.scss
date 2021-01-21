@@ -1,4 +1,5 @@
 @import './mixins';
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 
 @media screen and (min-width: 1px) {
 
@@ -67,8 +68,6 @@
         @include bgColor2;
         border-radius: .4em;
     }
-    
-
     .copyrightInfo{
         display: flex;
         position: absolute;
@@ -81,7 +80,47 @@
         align-items: center;
         padding-bottom: 10px;
         padding-top: 10px;
+        
     }
+
+    a, a:hover {
+        text-decoration: none;
+    }
+    
+    .socialbtns, .socialbtns ul, .socialbtns li {
+      margin: 0;
+      padding: 5px;
+      // display: flex;
+      // justify-content: center;
+      //   // align-items: center;
+      //   // text-align: center;
+      margin-top: auto;
+  
+    }
+    
+    .socialbtns li {
+        // list-style: none outside none;
+        // display: inline-block;
+    }
+    .socialbtns .fa {
+        width: 40px;
+        height: 28px;
+        color: #000;
+        @include bgColor3;
+        border: 1px solid #000;
+        padding-top: 7px;
+        border-radius: 22px;
+        -moz-border-radius: 22px;
+        -webkit-border-radius: 22px;
+        -o-border-radius: 22px;
+    }
+    
+    .socialbtns .fa:hover {
+        color: #ffffff;
+        @include bgColor3;
+        border: 1px solid #000;
+    }
+    
     @media screen and (min-width: 768px) {
 
         .resumeMain {

@@ -23,21 +23,20 @@ export default function Sidenav() {
 
 
     return(
-
-    <header className="header" role="banner">
-        <h1 className="logo">
-            <img src={toggle ? logoW : logoB} className="myLogo" onClick={changeLogo}/>
-        </h1>
-        <div className="nav-wrap">
-            <nav className="main-nav" role="navigation">
-            <ul className="unstyled list-hover-slide">
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/resume">Resume</Link></li>
-                <li><Link to="/publicblog">Blog</Link></li>
-            </ul>
-            </nav>
-            </div>
-    </header>
+        <header className="header" role="banner">
+            <h1 className="logo">
+                <img src={toggle ? logoW : logoB} className="myLogo" onClick={changeLogo}/>
+            </h1>
+            <div className="nav-wrap">
+                <nav className="main-nav" role="navigation">
+                <ul className="unstyled list-hover-slide">
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/resume">Resume</Link></li>
+                    <li><Link to="/publicblog">Blog</Link></li>
+                </ul>
+                </nav>
+                </div>
+        </header>
     )
 }
 

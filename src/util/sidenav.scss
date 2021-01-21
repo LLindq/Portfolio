@@ -12,13 +12,50 @@
 
 // MEDIA QUERIES
 @media screen and (min-width: 1px) {
-    .header{
-    position: fixed;
-    left: 0; top: 0; bottom: 0;
-    width: 100px;
-    z-index: 99;
-    @include bgColor4;
-    }
+  .header{
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  width: 100px;
+  z-index: 99;
+  @include bgColor4;
+  .socialbtns {
+    margin-top: auto;
+      }
+  }
+
+  a, a:hover {
+    text-decoration: none;
+  }
+  
+  .socialbtns, .socialbtns ul, .socialbtns li {
+    margin: 0;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .socialbtns li {
+      list-style: none outside none;
+      display: inline-block;
+  }
+  .socialbtns .fa {
+      width: 40px;
+      height: 28px;
+      color: #000;
+      @include bgColor3;
+      border: 1px solid #000;
+      padding-top: 7px;
+      border-radius: 22px;
+      -moz-border-radius: 22px;
+      -webkit-border-radius: 22px;
+      -o-border-radius: 22px;
+  }
+  
+  .socialbtns .fa:hover {
+      color: #ffffff;
+      @include bgColor3;
+      border: 1px solid #000;
+  }
 
     .logo{
     text-transform: lowercase;
@@ -61,6 +98,9 @@
         }
       }
     }
+    
+    
+    
     @media screen and (min-width: 768px) {
 
         .header{

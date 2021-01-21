@@ -31,8 +31,12 @@ export default function Resume() {
             </div>
             </div>
         </div>
-    
         <div className="copyrightInfo">
+        <div align="center" class="socialbtns">
+                    <li><a href="https://github.com/LLindq" class="fa fa-lg fa-github"></a></li>
+                    <li><a href="https://www.linkedin.com/in/leon-lindqvist/" class="fa fa-lg fa-linkedin"></a></li>
+                    <li><a href="https://www.facebook.com/leon.lindqvist" class="fa fa-lg fa-facebook"></a></li>
+                </div>
             <div className="info">leon.lindqvist@gmail.com</div>
             <div className="info">© 2020 Leon Lindqvist</div>
         </div>
